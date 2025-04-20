@@ -1,9 +1,9 @@
 //Add Student Record
 // fields:
-//•	Name
-//•	Roll Number
-//•	Department
-//•	GPA
+//â€¢	Name
+//â€¢	Roll Number
+//â€¢	Department
+//â€¢	GPA
 //The function should store this data in a text file named students.txt using file handling in append mode.
 
 //Search Student by Roll Number
@@ -23,6 +23,10 @@ void eddit_gpa();
 void del();
 
 int main() {
+int q;
+cout<<"1:to entre data\n2:for other things\nEntre: ";
+cin>>q;
+	if(q==1){
 	int c = 1;
 	ofstream f("data.txt", ios::app);
 	string name, roll_no, Department, gpa;
@@ -53,8 +57,11 @@ int main() {
 		cout << s << endl;
 	}
 	f1.close();
+	}
+	else
+	{
 	int a;
-	cout << "press for 1 Search Student by Roll Number\npress for 2 Update Student GPA\npress for 3 Delete Student Record";
+	cout << "press 1 to Search Student by Roll Number\npress 2 to Update Student GPA\npress 3 to  Delete Student Record";
 	cin >> a;
 	switch (a)
 	{
@@ -70,6 +77,7 @@ int main() {
 	
 	default:
 		cout << "you entre rong choice\n";
+	}
 	}
 }
 void search() {
